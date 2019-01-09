@@ -58,6 +58,33 @@
 ### cas-client
 - 目前实现功能：基于官方项目搭建
 - 主要修改web.xml和服务端注册客户端
+### spring-boot-Starter
+- 可将cas-client的spring部分封装到一个starter中达到开箱即用的目的
+- 主要需要注意：这里的启动装配方式有两种
+  - 启动类装配：在META-INF中创建文件spring.factories，添加：
+    ```               
+    org.springframework.boot.autoconfigure.EnableAutoConfiguration= \
+    配置conf
+    ```
+>> 给@EnableAutoConfiguration去自动扫描
+  - 注解方式
+    - 添加注解类
+      ```
+      /**
+       * 配置注解在入口类添加EnableCasClient即可使用该Start
+       */
+      @Target(ElementType.TYPE)
+      @Retention(RetentionPolicy.RUNTIME)
+      @Documented
+      @Inherited
+      @Import(CasClientConfiguration.class)
+      public @interface EnableCasClient {
+      }
+      ```
+>> 而后只需在项目中添加注解 EnableCasClient 即可
 
- 
- 
+### cas-spring-client
+- 目前完成的功能有
+  - 客户端集成
+  - 自定义鉴权：客户端整合cas之后,无论我们访问什么地址,只要没有发现票据,都会跳转到cas服务端去进行登录。有时候我们有这样的需求,用户不登录也可以访问某些网页,这个时候就需要用到AuthenticationFilter的忽略地址功能。
+  - cas单点退出（未完成）
