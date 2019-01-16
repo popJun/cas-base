@@ -21,7 +21,9 @@
 <p>A sample web application that exercises the CAS protocol features via the Java CAS Client.</p>
 <hr>
 <img src="../images/test.jpg" style="width: 100px;height: 100px">
-<p><b>Authenticated User Id:</b> <a href="logout.jsp" title="Click here to log out"><%= request.getRemoteUser() %>
+<p><b>Authenticated User Id:</b> <a href="<%=request.getContextPath() %>/logout" title="Click here to log out">登出(跳转默认页)
+</a></p>
+<p><b>Authenticated User Id:</b> <a href="<%=request.getContextPath() %>/logout2" title="Click here to log out">登出(跳转指定也)
 </a></p>
 
 <%

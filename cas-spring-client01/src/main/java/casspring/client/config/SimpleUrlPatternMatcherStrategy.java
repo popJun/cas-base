@@ -1,5 +1,6 @@
 package casspring.client.config;
 
+
 import org.jasig.cas.client.authentication.UrlPatternMatcherStrategy;
 
 import java.util.regex.Pattern;
