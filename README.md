@@ -47,6 +47,23 @@
     cas.authn.jdbc.encode[0].driverClass=com.mysql.jdbc.Driver
     cas.authn.jdbc.encode[0].user=root
     cas.authn.jdbc.encode[0].password=root
+    #注册客户端
+    cas.serviceRegistry.initFromJson=true
+    cas.serviceRegistry.watcherEnabled=true
+    cas.serviceRegistry.schedule.repeatInterval=120000
+    cas.serviceRegistry.schedule.startDelay=15000
+    cas.serviceRegistry.managementType=DEFAULT
+    cas.serviceRegistry.json.location=classpath:/services
+    
+    #服务端配置单点登出
+    #配置允许登出后跳转到指定页面
+    cas.logout.followServiceRedirects=true
+    # 跳转到指定页面需要的参数名为
+    cas.logout.redirectParameter=service
+    # 在退出时是否需要 确认一下  true确认 false直接退出
+    cas.logout.confirmLogout=true
+    # 是否移除子系统的票据
+    cas.logout.removeDescendantTickets=true
     ```
  - 自定义密码认证
    - 从数据库获取信息，并且对密码进行MD5加密 或者 加盐方式处理.假如某些特殊情况下,密码规则不符合以上,我们就需要自定义密码校验。
@@ -87,4 +104,4 @@
 - 目前完成的功能有
   - 客户端集成
   - 自定义鉴权：客户端整合cas之后,无论我们访问什么地址,只要没有发现票据,都会跳转到cas服务端去进行登录。有时候我们有这样的需求,用户不登录也可以访问某些网页,这个时候就需要用到AuthenticationFilter的忽略地址功能。
-  - cas单点退出（未完成）
+  - cas单点退出
