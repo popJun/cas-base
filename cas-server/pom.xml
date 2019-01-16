@@ -138,13 +138,13 @@
             <artifactId>druid</artifactId>
             <version>1.0.28</version>
         </dependency>
-<!--
-        配置文件配置shiro时候用
--->
+        <!--
+                配置文件配置shiro时候用
+        -->
         <!--<dependency>-->
-           <!--<groupId>org.apereo.cas</groupId>-->
-           <!--<artifactId>cas-server-support-shiro-authentication</artifactId>-->
-           <!--<version>${cas.version}</version>-->
+        <!--<groupId>org.apereo.cas</groupId>-->
+        <!--<artifactId>cas-server-support-shiro-authentication</artifactId>-->
+        <!--<version>${cas.version}</version>-->
         <!--</dependency>-->
         <dependency>
             <groupId>org.apache.shiro</groupId>
