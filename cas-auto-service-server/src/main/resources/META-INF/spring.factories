@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration =server.sso.cas.config.SpringConfig,\
+   server.sso.cas.config.MapperScanConfig,\
+   server.sso.cas.config.MyAuthenticationConfiguration,\
+   server.sso.cas.config.ShiroAuthencationConfiguration
