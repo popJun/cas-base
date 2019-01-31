@@ -1,0 +1,7 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration =server.sso.cas.config.SpringConfig,\
+   server.sso.cas.config.MapperScanConfig,\
+   server.sso.cas.config.CaptchaWebflowConfiguration,\
+   server.sso.cas.config.TotalHandlerConfiguration
+
+
+
