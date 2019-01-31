@@ -1,0 +1,12 @@
+{
+  "@class" : "org.apereo.cas.services.RegexRegisteredService",
+  "serviceId" : "^(https|imaps|http)://cas.client1.com.*",
+  "name" : "自定义客户端01",
+  "id" : 1000,
+  "description" : "一个测试的客户端1服务",
+  "evaluationOrder" : 10,
+  "theme":"client1",
+  "attributeReleasePolicy" : {
+    "@class" : "org.apereo.cas.services.ReturnAllAttributeReleasePolicy"
+  }
+}
